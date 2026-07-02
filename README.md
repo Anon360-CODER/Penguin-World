@@ -1,7 +1,7 @@
 # 🐧 Penguin World
 
 A sleek, modern mobile web application about penguins with a glacier-themed, liquid glassmorphic design.
-
+Blessings of mom!
 ## Features
 
 - **Interactive Penguin Gallery** - Explore 4 featured penguin species
