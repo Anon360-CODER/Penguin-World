@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#0a0e2e">
+    <title>Penguin Archive - Species Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Animated Background Blobs -->
+        <div class="background-blob blob-1"></div>
+        <div class="background-blob blob-2"></div>
+        <div class="background-blob blob-3"></div>
+
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <h1 class="logo">🐧 PENGUIN ARCHIVE</h1>
+                <p class="tagline">Explore all 18 species in immersive detail</p>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Species Grid View -->
+            <section id="gridView" class="view active">
+                <div class="species-grid">
+                    <div class="species-tile" onclick="viewSpecies(0)"><div class="tile-illustration">🐧</div><h3>Emperor</h3><p>Aptenodytes forsteri</p></div>
+                    <div class="species-tile" onclick="viewSpecies(1)"><div class="tile-illustration">🐧</div><h3>Adelie</h3><p>Pygoscelis adeliae</p></div>
+                    <div class="species-tile" onclick="viewSpecies(2)"><div class="tile-illustration">🐧</div><h3>Gentoo</h3><p>Pygoscelis papua</p></div>
+                    <div class="species-tile" onclick="viewSpecies(3)"><div class="tile-illustration">🐧</div><h3>King</h3><p>Aptenodytes patagonicus</p></div>
+                    <div class="species-tile" onclick="viewSpecies(4)"><div class="tile-illustration">🐧</div><h3>Rockhopper</h3><p>Eudyptes chrysocome</p></div>
+                    <div class="species-tile" onclick="viewSpecies(5)"><div class="tile-illustration">🐧</div><h3>Macaroni</h3><p>Eudyptes chrysolophus</p></div>
+                    <div class="species-tile" onclick="viewSpecies(6)"><div class="tile-illustration">🐧</div><h3>Royal</h3><p>Eudyptes schlegeli</p></div>
+                    <div class="species-tile" onclick="viewSpecies(7)"><div class="tile-illustration">🐧</div><h3>Fiordland</h3><p>Eudyptes pachyrhynchus</p></div>
+                    <div class="species-tile" onclick="viewSpecies(8)"><div class="tile-illustration">🐧</div><h3>Snares</h3><p>Eudyptes robustus</p></div>
+                    <div class="species-tile" onclick="viewSpecies(9)"><div class="tile-illustration">🐧</div><h3>Yellow-eyed</h3><p>Megadyptes antipodes</p></div>
+                    <div class="species-tile" onclick="viewSpecies(10)"><div class="tile-illustration">🐧</div><h3>Little Blue</h3><p>Eudyptula minor</p></div>
+                    <div class="species-tile" onclick="viewSpecies(11)"><div class="tile-illustration">🐧</div><h3>African</h3><p>Spheniscus demersus</p></div>
+                    <div class="species-tile" onclick="viewSpecies(12)"><div class="tile-illustration">🐧</div><h3>Humboldt</h3><p>Spheniscus humboldti</p></div>
+                    <div class="species-tile" onclick="viewSpecies(13)"><div class="tile-illustration">🐧</div><h3>Magellanic</h3><p>Spheniscus magellanicus</p></div>
+                    <div class="species-tile" onclick="viewSpecies(14)"><div class="tile-illustration">🐧</div><h3>Chinstrap</h3><p>Pygoscelis antarcticus</p></div>
+                    <div class="species-tile" onclick="viewSpecies(15)"><div class="tile-illustration">🐧</div><h3>Erect-crested</h3><p>Eudyptes sclateri</p></div>
+                    <div class="species-tile" onclick="viewSpecies(16)"><div class="tile-illustration">🐧</div><h3>Northern RH</h3><p>Eudyptes moseleyi</p></div>
+                    <div class="species-tile" onclick="viewSpecies(17)"><div class="tile-illustration">🐧</div><h3>Southern RH</h3><p>Eudyptes chrysocome</p></div>
+                </div>
+            </section>
+
+            <!-- Detailed Species View -->
+            <section id="detailView" class="view">
+                <button class="back-btn" onclick="backToGrid()">← Back to Grid</button>
+                
+                <div class="detail-container glass-effect">
+                    <div class="detail-header">
+                        <div class="detail-illustration" id="detailIllustration">🐧</div>
+                        <div class="detail-title-section">
+                            <h1 id="detailName">Species Name</h1>
+                            <p id="detailScientific" class="scientific">Scientific name</p>
+                        </div>
+                    </div>
+
+                    <div class="detail-stats-grid">
+                        <div class="stat-card glass-effect">
+                            <span class="stat-icon">📏</span>
+                            <span class="stat-label">Height</span>
+                            <span class="stat-value" id="statHeight">-</span>
+                        </div>
+                        <div class="stat-card glass-effect">
+                            <span class="stat-icon">⚖️</span>
+                            <span class="stat-label">Weight</span>
+                            <span class="stat-value" id="statWeight">-</span>
+                        </div>
+                        <div class="stat-card glass-effect">
+                            <span class="stat-icon">🌍</span>
+                            <span class="stat-label">Region</span>
+                            <span class="stat-value" id="statRegion">-</span>
+                        </div>
+                        <div class="stat-card glass-effect">
+                            <span class="stat-icon">🥚</span>
+                            <span class="stat-label">Clutch Size</span>
+                            <span class="stat-value" id="statClutch">-</span>
+                        </div>
+                    </div>
+
+                    <div class="detail-content">
+                        <div class="detail-section glass-effect">
+                            <h2>🔍 Overview</h2>
+                            <p id="detailOverview">-</p>
+                        </div>
+
+                        <div class="detail-section glass-effect">
+                            <h2>🏠 Distribution & Habitat</h2>
+                            <p id="detailHabitat">-</p>
+                        </div>
+
+                        <div class="detail-section glass-effect">
+                            <h2>🎨 Physical Characteristics</h2>
+                            <p id="detailCharacteristics">-</p>
+                        </div>
+
+                        <div class="detail-section glass-effect">
+                            <h2>🍽️ Diet & Hunting</h2>
+                            <p id="detailDiet">-</p>
+                        </div>
+
+                        <div class="detail-section glass-effect">
+                            <h2>👨‍👩‍👧 Breeding & Behavior</h2>
+                            <p id="detailBreeding">-</p>
+                        </div>
+
+                        <div class="detail-section glass-effect">
+                            <h2>⚠️ Conservation Status</h2>
+                            <p id="detailConservation">-</p>
+                        </div>
+                        
+                        <div class="detail-section glass-effect">
+                            <h2>🎯 Interesting Facts</h2>
+                            <p id="detailFacts">-</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
